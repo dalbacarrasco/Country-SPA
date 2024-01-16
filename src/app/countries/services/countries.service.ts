@@ -11,7 +11,7 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   private getCountriesRequest(url: string): Observable<Country[]> {
-    return this.http.get<Country[]>(url).pipe( catchError( err => of([]) ), delay(2000) );
+    return this.http.get<Country[]>(url).pipe( catchError( err => of([]) ) );
   }
 
   searchCountryByCode(term: string): Observable<Country | null> {
